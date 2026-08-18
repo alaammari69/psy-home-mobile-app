@@ -1,50 +1,76 @@
-# Welcome to your Expo app 👋
+# PsyHome — Patient Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+The patient-facing mobile app for **PsyHome**, an AI-assisted psychiatric diagnostic platform. Patients log in, view their profile, and go through AI-assisted diagnostic chat sessions from their phone.
 
-## Get started
+> **Status:** advanced prototype, not a shipped/production product. Built as part of a final-year engineering capstone (PFE), graded *Excellent*.
 
-1. Install dependencies
+## Part of the PsyHome Platform
 
-   ```bash
-   npm install
-   ```
+This repo is the patient mobile app. The full system also includes:
+- [PsyHome AI Diagnostic Engine](https://github.com/alaammari69/PsyHome-mental-disorders-diagnosis-api) — LangGraph/FastAPI backend
+- [PsyHome Web Application](https://github.com/alaammari69/PsyHome-web-application) — psychiatrist-facing dashboard (React)
 
-2. Start the app
+## Features
 
-   ```bash
-   npx expo start
-   ```
+- **Authentication** — patient login with secure token storage via `expo-secure-store`
+- **Home** — patient home screen with session access
+- **Diagnostic sessions** — real-time AI-assisted chat session with the diagnostic engine (`SessionPage`)
+- **Profile** — patient profile management
 
-In the output, you'll find options to open the app in a
+## Tech Stack
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- **Framework:** React Native (Expo, Expo Router) + TypeScript
+- **Navigation:** React Navigation
+- **Secure storage:** expo-secure-store
+- **Platforms:** iOS, Android, Web (via Expo)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Project Structure
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+app/
+├── _layout.tsx           # Root layout / navigation
+├── LoginPage.tsx          # Patient login
+├── HomePage.jsx           # Home screen
+├── SessionPage.jsx        # AI-assisted diagnostic chat session
+├── Profilepage.jsx        # Patient profile
+└── styles/                # Per-screen stylesheets
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Getting Started
 
-## Learn more
+### Prerequisites
 
-To learn more about developing your project with Expo, look at the following resources:
+- Node.js 18+
+- Expo Go app (for testing on a physical device) or an Android/iOS simulator
+- The [PsyHome API](https://github.com/alaammari69/PsyHome-mental-disorders-diagnosis-api) running locally or remotely
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Installation
 
-## Join the community
+```bash
+git clone https://github.com/alaammari69/psy-home-mobile-app.git
+cd psy-home-mobile-app
+npm install
+```
 
-Join our community of developers creating universal apps.
+Set up environment variables:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+cp .env.example .env
+# Point it at your running PsyHome API instance
+```
+
+Run the app:
+
+```bash
+npx expo start
+```
+
+Then open it in Expo Go, an Android emulator, or an iOS simulator from the Expo CLI output.
+
+## Notes
+
+This is a research/academic prototype built to demonstrate a full-stack AI-assisted clinical workflow, not a certified medical product.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
