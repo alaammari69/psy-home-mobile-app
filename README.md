@@ -4,6 +4,10 @@ The patient-facing mobile app for **PsyHome**, an AI-assisted psychiatric diagno
 
 > **Status:** advanced prototype, not a shipped/production product. Built as part of a final-year engineering capstone (PFE), graded *Excellent*.
 
+## Demo
+
+[![PsyHome Demo](https://img.youtube.com/vi/HtEUl5g3oxw/0.jpg)](https://youtu.be/HtEUl5g3oxw)
+
 ## Part of the PsyHome Platform
 
 This repo is the patient mobile app. The full system also includes:
